@@ -444,6 +444,7 @@ class Parser(object):
                     new_args = args + (parsed_args, )
                     return func(*new_args, **kwargs)
             wrapper.__wrapped__ = func
+            wrapper.__argmap__ = argmap
             return wrapper
         return decorator
 
